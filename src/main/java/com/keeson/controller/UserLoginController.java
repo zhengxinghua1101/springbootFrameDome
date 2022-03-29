@@ -4,6 +4,10 @@ import com.keeson.common.ResultHandler;
 import com.keeson.mapper.UserMapper;
 import com.keeson.vo.User;
 import com.keeson.vo.UserLogin;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +18,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
+@Api(tags = "用户接口")
 public class UserLoginController {
 
     @Autowired
@@ -32,6 +37,10 @@ public class UserLoginController {
 
 
 
+    @ApiOperation(value = "登录接口")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name="userLogin",value = "登录用户信息")
+    })
     @PostMapping("/login")
     Map<String,Object> userLogin(@RequestBody UserLogin userLogin ){
         System.out.println("username:"+userLogin.getUsername());
