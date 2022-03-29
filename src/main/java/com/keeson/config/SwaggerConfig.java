@@ -26,8 +26,8 @@ public class SwaggerConfig{
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Spring Boot中使用Swagger2构建RESTful API")  // 标题
-                .description("rest api 文档构建利器")  // 描述信息
+                .title("Spring Boot中Swagger2文档")  // 标题
+                .description("框架必备")  // 描述信息
                 .termsOfServiceUrl("http://zhengxinghua.top")  //服务网址
                 .contact("Jeff.zheng")  // 联系方式
                 .version("1.0") //版本号
