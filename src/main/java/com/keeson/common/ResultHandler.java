@@ -37,11 +37,8 @@ public class ResultHandler extends HashMap<String,Object> {
     }
 
 
-    public  static  ResultHandler success(String msg){
-        if(msg.isEmpty()){
-            return   ResultHandler.success();
-        }
-        return  new ResultHandler(SUCCESS_CODE,msg);
+    public  static  ResultHandler success(Object data){
+        return  new ResultHandler(SUCCESS_CODE,SUCCESS_MSG,data);
     }
 
     public  static  ResultHandler success(String msg,Object data){

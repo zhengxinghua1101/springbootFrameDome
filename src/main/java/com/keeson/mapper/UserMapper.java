@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.keeson.vo.User;
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository //声明持久层操作的bean
 public interface UserMapper  extends BaseMapper<User> {
 
 

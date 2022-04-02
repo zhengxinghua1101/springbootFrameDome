@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 spring:
 # spring.datasource的配置信息
   datasource:
@@ -26,7 +26,12 @@ spring:
         #连接池中的最小空闲连接
         min-idle: 0
 
-
-
-
+mybatis-plus:
+  configuration:
+#   日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+#      表前缀
+      table-prefix: xh_
 

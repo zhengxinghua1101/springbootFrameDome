@@ -26,4 +26,5 @@ public class MybatisPlusPage {
         System.out.println("总页数"+userIPage.getPages());
         System.out.println(userIPage);
     }
+
 }
