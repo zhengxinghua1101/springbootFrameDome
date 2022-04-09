@@ -1,5 +1,6 @@
 package com.keeson.controller;
 
+import cn.hutool.core.date.DateUtil;
 import com.keeson.common.ResultHandler;
 import com.keeson.service.UserService;
 import com.keeson.service.impl.UserServiceImpl;
@@ -27,8 +28,10 @@ public class TestController {
     ResultHandler home(){
         System.out.println("555=="+userService.getById(55));
         System.out.println("666=="+userServiceimpl.getById(66));
-        return  ResultHandler.success("1212121","6666");
+        return  ResultHandler.success("1212121", DateUtil.now());
     }
+
+    
 
 
 

@@ -99,6 +99,14 @@
             <version>3.5.0</version>
         </dependency>
 
+        <!-- hutool 工具的使用 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.22</version>
+        </dependency>
+
+
 
 
 
