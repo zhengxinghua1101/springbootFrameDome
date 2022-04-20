@@ -1,7 +1,9 @@
 package com.keeson;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.keeson.mapper.ExcelPoiMapper;
 import com.keeson.mapper.UserMapper;
+import com.keeson.vo.ExcelPoi;
 import com.keeson.vo.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class MybatisPlusWrapper {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private ExcelPoiMapper excelPoiMapper;
 
 
     @Test
@@ -76,6 +81,14 @@ public class MybatisPlusWrapper {
         //SELECT id,col_name AS name,col_age AS age,col_email AS email FROM xh_user WHERE (id <= ?) GROUP BY id,name
         List<User> users = userMapper.selectList(new QueryWrapper<User>().groupBy("id","name").le("id",20L));
         System.out.println(users);
+    }
+
+
+    @Test
+    void test8(){
+        //SELECT id,col_class,col_name,col_image,col_hobby,create_time,create_date,create_datetime FROM xh_excel_poi
+        List<ExcelPoi> excelPois = excelPoiMapper.selectList(null);
+        System.out.println(excelPois);
     }
 
 

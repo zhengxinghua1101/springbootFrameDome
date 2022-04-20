@@ -21,6 +21,6 @@ public class User {
     private Integer age;
 
     @TableField(value = "col_email")
-    @Excel(name = "邮箱")
+    @Excel(name = "邮箱",type = 1)
     private String email;
 }
