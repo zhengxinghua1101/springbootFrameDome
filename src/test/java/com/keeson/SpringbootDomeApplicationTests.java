@@ -37,7 +37,7 @@ class SpringbootDomeApplicationTests {
         User user = new User();
         user.setName("Jack");
         user.setAge(20);
-        User u  = userMapper.selectByUserId(user);
+        User u = userMapper.selectByUserId(user);
         System.out.println(u);
 
     }
@@ -45,7 +45,7 @@ class SpringbootDomeApplicationTests {
 
     @Test
     void testRedis() {
-        redisUtils.set("name","test");
+        redisUtils.set("name", "test");
         String name = redisUtils.get("name");
         System.out.println(name);
 
@@ -54,12 +54,11 @@ class SpringbootDomeApplicationTests {
 
     @Test
     void testRedis1() {
-        redisUtils.set("name","我的世界",1, TimeUnit.MINUTES);
+        redisUtils.set("name", "我的世界", 1, TimeUnit.MINUTES);
         String name = redisUtils.get("name");
         System.out.println(name);
 
     }
-
 
 
     @Test

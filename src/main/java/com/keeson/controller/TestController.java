@@ -25,18 +25,15 @@ public class TestController {
 
     @ApiOperation("home")
     @GetMapping("/")
-    ResultHandler home(){
-        System.out.println("555=="+userService.getById(55));
-        System.out.println("666=="+userServiceimpl.getById(66));
-        return  ResultHandler.success("1212121", DateUtil.now());
+    ResultHandler home() {
+        System.out.println("555==" + userService.getById(55));
+        System.out.println("666==" + userServiceimpl.getById(66));
+        return ResultHandler.success("1212121", DateUtil.now());
     }
 
 
-
-
-
     @PostMapping("/sms")
-    ResultHandler shortMessagingService(){
-        return  ResultHandler.success();
+    ResultHandler shortMessagingService() {
+        return ResultHandler.success();
     }
 }

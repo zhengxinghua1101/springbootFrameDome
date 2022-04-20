@@ -17,10 +17,10 @@ public class User {
     private String name;
 
     @TableField(value = "col_age")
-    @Excel(name = "年龄",suffix = "岁")
+    @Excel(name = "年龄", suffix = "岁")
     private Integer age;
 
     @TableField(value = "col_email")
-    @Excel(name = "邮箱",type = 1)
+    @Excel(name = "邮箱", type = 1)
     private String email;
 }

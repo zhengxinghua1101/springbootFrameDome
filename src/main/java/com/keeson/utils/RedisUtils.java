@@ -3,6 +3,7 @@ package com.keeson.utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
@@ -11,92 +12,95 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtils {
 
     @Autowired
-    private RedisTemplate<String,String> redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
 
 
     /**
      * 读取缓存
+     *
      * @param key
      * @return
      */
-    public String get(final String key){
-        return  redisTemplate.opsForValue().get(key);
+    public String get(final String key) {
+        return redisTemplate.opsForValue().get(key);
     }
 
 
     /**
      * 写入缓存
+     *
      * @param key
      * @param value
      * @return
      */
-    public  boolean set(final String key ,String value){
+    public boolean set(final String key, String value) {
         boolean result = false;
         try {
-            redisTemplate.opsForValue().set(key,value);
+            redisTemplate.opsForValue().set(key, value);
             result = true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return  result;
+        return result;
     }
 
-    public  boolean set(final String key , String value, Integer timeout, TimeUnit timeUnit ){
+    public boolean set(final String key, String value, Integer timeout, TimeUnit timeUnit) {
         boolean result = false;
         try {
-            redisTemplate.opsForValue().set(key,value,timeout,timeUnit);
+            redisTemplate.opsForValue().set(key, value, timeout, timeUnit);
             result = true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return  result;
+        return result;
     }
-
 
 
     /**
      * 更新缓存
+     *
      * @param key
      * @param value
      * @return
      */
-    public  boolean update(final String key ,String value){
+    public boolean update(final String key, String value) {
         boolean result = false;
         try {
-            redisTemplate.opsForValue().getAndSet(key,value);
+            redisTemplate.opsForValue().getAndSet(key, value);
             result = true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return  result;
+        return result;
     }
 
 
     /**
      * 删除缓存
+     *
      * @param key
      * @return
      */
-    public  boolean delete(final String key ){
+    public boolean delete(final String key) {
         boolean result = false;
         try {
             redisTemplate.delete(key);
             result = true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return  result;
+        return result;
     }
 
-    public  boolean delete(final Collection collection ){
+    public boolean delete(final Collection collection) {
         boolean result = false;
         try {
             redisTemplate.delete(collection);
             result = true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return  result;
+        return result;
     }
 
 }

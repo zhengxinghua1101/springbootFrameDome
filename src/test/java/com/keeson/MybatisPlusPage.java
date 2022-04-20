@@ -17,13 +17,13 @@ public class MybatisPlusPage {
 
 
     @Test
-    void test1(){
+    void test1() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
-        wrapper.ge("col_age",20);
-        Page<User> page = new Page<>(1,10);
-        IPage<User>  userIPage = userMapper.selectPage(page,wrapper);
-        System.out.println("总条数"+userIPage.getTotal());
-        System.out.println("总页数"+userIPage.getPages());
+        wrapper.ge("col_age", 20);
+        Page<User> page = new Page<>(1, 10);
+        IPage<User> userIPage = userMapper.selectPage(page, wrapper);
+        System.out.println("总条数" + userIPage.getTotal());
+        System.out.println("总页数" + userIPage.getPages());
         System.out.println(userIPage);
     }
 

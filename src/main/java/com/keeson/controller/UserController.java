@@ -28,18 +28,17 @@ public class UserController {
 
 
     @GetMapping("/getUserData")
-    ResultHandler getAllUser(){
+    ResultHandler getAllUser() {
         List<User> users = userMapper.selectList(null);
         System.out.println("aa");
-        return  new ResultHandler().success(users);
+        return new ResultHandler().success(users);
     }
-
 
 
     @GetMapping("/download")
     void download(HttpServletResponse response) throws IOException {
         List<User> users = userMapper.selectList(null);
-        Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("用户","user"),User.class,users);
+        Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams("用户", "user"), User.class, users);
         response.setHeader("Content-Disposition", "attachment; filename=\"ruoyi.xls\"");
         ServletOutputStream outputStream = response.getOutputStream();
 //        FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Jeff.zheng.SOFTIDE\\Desktop\\aa.xls");
@@ -48,7 +47,6 @@ public class UserController {
 //        fileOutputStream.close();
         workbook.close();
     }
-
 
 
 }

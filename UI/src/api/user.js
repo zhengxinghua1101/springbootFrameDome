@@ -13,13 +13,13 @@ export function getInfo() {
     url: '/user/info',
     method: 'get'
   })
-} 
+}
 
 export function logout() {
   return request({
-   url: '/user/logout',
-   method: 'post'
- })
+    url: '/user/logout',
+    method: 'post'
+  })
 }
 
 export function getUserList() {

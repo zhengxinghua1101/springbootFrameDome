@@ -10,12 +10,12 @@ public class HutoolTest {
 
 
     @Test
-    void test1(){
+    void test1() {
 
         String url = "https://apitest.smartbed.ink/api/v2/user/bed/recordDeviceTest";
-        Map<String,Object> form = new HashMap<>();
-        form.put("device_id","KSWF12S000003986");
-        form.put("left_sensor_state",2);
+        Map<String, Object> form = new HashMap<>();
+        form.put("device_id", "KSWF12S000003986");
+        form.put("left_sensor_state", 2);
         String result = HttpRequest.post(url)
                 .header("Authorization", "hz9bpM8f9GKVfODz4Ad37dO23R0KEu2v")
                 .form(form)

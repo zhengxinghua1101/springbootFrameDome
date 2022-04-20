@@ -7,7 +7,6 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 
-
 /**
  * constantRoutes
  * a base page that does not have permission requirements
@@ -34,7 +33,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '主页', icon: 'el-icon-s-home' }
+      meta: {title: '主页', icon: 'el-icon-s-home'}
     }]
   },
 
@@ -43,32 +42,31 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: '分类', icon: 'el-icon-grape' },
+    meta: {title: '分类', icon: 'el-icon-grape'},
     children: [
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '电动床', icon: 'el-icon-cherry' }
+        meta: {title: '电动床', icon: 'el-icon-cherry'}
       },
       {
         path: 'table2',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: '电动床', icon: 'el-icon-cherry' }
+        meta: {title: '电动床', icon: 'el-icon-cherry'}
       }
     ]
   },
 
-  
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  {path: '*', redirect: '/404', hidden: true}
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({y: 0}),
   routes: constantRoutes
 })
 

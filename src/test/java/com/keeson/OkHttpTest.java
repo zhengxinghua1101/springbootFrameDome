@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import okhttp3.*;
 import org.junit.jupiter.api.Test;
+
 import java.io.IOException;
 
 
@@ -12,12 +13,13 @@ public class OkHttpTest {
 
     /**
      * get
+     *
      * @throws IOException
      */
     @Test
     void TestGet() throws IOException {
 
-        OkHttpClient  client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient();
         String url = "http://httpbin.org/get";
 
         Request request = new Request.Builder()
@@ -34,6 +36,7 @@ public class OkHttpTest {
 
     /**
      * form表单 post
+     *
      * @throws IOException
      */
     @Test
@@ -57,6 +60,7 @@ public class OkHttpTest {
 
     /**
      * json post
+     *
      * @throws IOException
      */
     @Test
@@ -80,7 +84,6 @@ public class OkHttpTest {
         System.out.println(response.body().string());
 
     }
-
 
 
 }

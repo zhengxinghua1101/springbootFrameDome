@@ -5,6 +5,6 @@ import com.keeson.vo.ExcelPoi;
 import org.springframework.stereotype.Repository;
 
 @Repository //声明持久层操作的bean
-public interface ExcelPoiMapper  extends BaseMapper<ExcelPoi> {
+public interface ExcelPoiMapper extends BaseMapper<ExcelPoi> {
 
 }
