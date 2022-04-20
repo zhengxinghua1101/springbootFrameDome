@@ -19,7 +19,7 @@ public class MybatisPlusPage {
     @Test
     void test1(){
         QueryWrapper<User> wrapper = new QueryWrapper<>();
-        wrapper.ge("age",20);
+        wrapper.ge("col_age",20);
         Page<User> page = new Page<>(1,10);
         IPage<User>  userIPage = userMapper.selectPage(page,wrapper);
         System.out.println("总条数"+userIPage.getTotal());
