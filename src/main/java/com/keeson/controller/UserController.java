@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-public class UserController {
+public class UserController  extends  BaseController{
 
 
     @Autowired
@@ -29,6 +29,7 @@ public class UserController {
 
     @GetMapping("/getUserData")
     ResultHandler getAllUser() {
+        startPage();
         List<User> users = userMapper.selectList(null);
         System.out.println("aa");
         return new ResultHandler().success(users);
