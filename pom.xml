@@ -57,6 +57,7 @@
             <version>1.2.58</version>
         </dependency>
 
+<!--        https://jwt.io/libraries?language=Java-->
         <!--      jwt       -->
         <dependency>
             <groupId>com.auth0</groupId>
